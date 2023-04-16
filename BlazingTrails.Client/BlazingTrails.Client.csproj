@@ -11,4 +11,19 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.4" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Account" />
+    <Folder Include="Components" />
+    <Folder Include="Product" />
+    <Folder Include="ProductList" />
+    <Folder Include="ShoppingBasket" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Shared\MainLayout.razor" />
+    <_ContentIncludedByDefault Remove="Shared\NavMenu.razor" />
+    <_ContentIncludedByDefault Remove="Shared\SurveyPrompt.razor" />
+    <_ContentIncludedByDefault Remove="wwwroot\sample-data\weather.json" />
+  </ItemGroup>
+
 </Project>
