@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Watch Include="**/*.scss"/>
-    <None Update="**/*.css" Watch="false"/>
+    <Watch Include="**/*.scss" />
+    <None Update="**/*.css" Watch="false" />
     <Folder Include="Account" />
     <Folder Include="Components" />
     <Folder Include="Product" />

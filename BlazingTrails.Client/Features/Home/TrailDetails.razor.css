@@ -34,8 +34,9 @@
   background-color: white;
   border-left: 0.063em solid gray;
   z-index: 100;
-  transform: translateX(110%);
+  transform: translateX(-110%);
   transition: transform 0.3s ease, width 0.3s ease;
+  text-align: justify;
 }
 
 .drawer-wrapper.slide > .drawer {
@@ -53,7 +54,7 @@
 }
 
 .drawer-controls {
-  padding: 20px;
+  padding: 50px;
   background-color: #ffffff;
 }
 
