@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlazingTrails.Api\BlazingTrails.Api.csproj" />
+    <ProjectReference Include="..\BlazingTrails.Client\BlazingTrails.Client.csproj" />
+  </ItemGroup>
+
 </Project>
