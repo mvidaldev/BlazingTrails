@@ -6,7 +6,6 @@
 
 @* <PageTitle>Search Trails - Blazing Trails</PageTitle> *@
 
-
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -18,7 +17,7 @@
 </nav>
 <h3>Search Results for "@SearchTerm"</h3>
 
-<SearchFilter SearchTerm="@SearchTerm"/>
+<SearchFilter SearchTerm="@SearchTerm" MaxLength="MaxLength" MaxTime="MaxTime"/>
 
 @if (_searchResults == null)
 {
@@ -43,8 +42,11 @@ else
     [Parameter]
     public string SearchTerm { get; set; } = default!;
     
-    [Parameter]
+    [Parameter, SupplyParameterFromQuery]
     public int? MaxLength { get; set; }
+
+    [Parameter, SupplyParameterFromQuery]
+    public int? MaxTime { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -63,18 +65,40 @@ else
         }
     }
 
-    protected override void OnParametersSet()
+    protected override void OnParametersSet() => UpdateFilters();
+    // {
+    //     if (_cachedSearchResults.Any() && MaxLength.HasValue)
+    //     {
+    //         _searchResults = _cachedSearchResults.Where(x => x.Length <= MaxLength.Value);
+    //     }
+    //     else if(_cachedSearchResults.Any() && MaxLength is null)
+    //     {
+    //         _searchResults = _cachedSearchResults;
+    //     }
+    // }
+    private void HandleTrailSelected(Trail trail) => _selectedTrail = trail;
+    private IEnumerable<Trail> _cachedSearchResults = Array.Empty<Trail>();
+
+    private void UpdateFilters()
     {
-        if (_cachedSearchResults.Any() && MaxLength.HasValue)
+        var filters = new List<Func<Trail, bool>>();
+        
+        if (MaxLength is not null && MaxLength > 0)
         {
-            _searchResults = _cachedSearchResults.Where(x => x.Length <= MaxLength.Value);
+            filters.Add(x=>x.Length <= MaxLength);
         }
-        else if(_cachedSearchResults.Any() && MaxLength is null)
+        if (MaxTime is not null && MaxTime > 0)
+        {
+            filters.Add(x=>x.TimeInMinutes <= MaxTime * 60);
+        }
+        if (filters.Any())
+        {
+            _searchResults = _cachedSearchResults
+                .Where(trail=>filters.All(filter=>filter(trail)));
+        }
+        else
         {
             _searchResults = _cachedSearchResults;
         }
     }
-    private void HandleTrailSelected(Trail trail) => _selectedTrail = trail;
-    private IEnumerable<Trail> _cachedSearchResults = Array.Empty<Trail>();
-
 }

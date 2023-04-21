@@ -7,22 +7,41 @@
            @onkeydown="ApplyFilters"
            @bind:event="oninput"
            @bind="_maxLength"/>
+
+
+    <label for="maxTime">Max Time (hours)</label>
+    <input type="number"
+           id="maxTime"
+           class="form-control"
+           @bind="_maxTime"/>
     <button class="btn btn-outline-primary bi bi-filter-circle"
             @onclick="FilterSearchResults">
-
         Filter
     </button>
 
     <button class="btn btn-outline-secondary"
-
             @onclick="ClearSearchFilter">
         Clear
     </button>
+
 
 </div>
 
 @code {
     private int _maxLength;
+    private int _maxTime;
+
+    [Parameter]
+    public int? MaxLength { get; set; }
+
+    [Parameter]
+    public int? MaxTime { get; set; }
+
+    protected override void OnInitialized()
+    {
+        _maxLength = MaxLength ?? 0;
+        _maxTime = MaxTime ?? 0;
+    }
 
     [Parameter]
     [EditorRequired]
@@ -30,8 +49,14 @@
 
     private void FilterSearchResults()
     {
-        NavigationManager.NavigateTo(
-            $"/search/{SearchTerm}/maxlength/{_maxLength}");
+        var uriWithQueryString = NavigationManager.GetUriWithQueryParameters(
+            new Dictionary<string, object?>()
+            {
+                [nameof(SearchPage.MaxLength)] = _maxLength == 0 ? null : _maxLength,
+                [nameof(SearchPage.MaxTime)] = _maxTime == 0 ? null : _maxTime
+            });
+
+        NavigationManager.NavigateTo(uriWithQueryString);
     }
 
     private void ClearSearchFilter()
