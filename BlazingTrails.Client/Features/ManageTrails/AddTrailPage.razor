@@ -1,0 +1,56 @@
+﻿@page "/add-trail"
+
+
+<PageTitle>Add Trail - Blazing Trails</PageTitle>
+
+
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+            AddTrail
+        </li>
+    </ol>
+</nav>
+
+
+
+<h3 class="mt-5 mb-4">Add a Trail</h3>
+
+
+<EditForm Model="_trail" OnValidSubmit="SubmitForm">
+
+    <BasicDetails />
+
+
+    <div class="mt-4 mb-5">
+        <div class="row">
+            <button class="btn btn-outline-secondary"
+                    type="button"
+                    @onclick="@(() => _trail = new TrailDto())">
+                Reset
+            </button>
+
+            <button class="btn btn-primary"
+                    type="submit">
+                Submit
+            </button>
+        </div>
+    </div>
+
+
+</EditForm>
+
+@code {
+    private TrailDto _trail = new TrailDto();
+
+    private async Task SubmitForm()
+    {
+    //submit data to api
+    }
+
+
+}

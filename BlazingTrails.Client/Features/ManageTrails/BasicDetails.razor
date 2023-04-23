@@ -1,0 +1,107 @@
+﻿<FormSection Title="Basic Details"
+             HelpText="this information is used to identify the trail
+ and can be searched to help hikers find it.">
+    <FormFieldSet Width="col-6">
+        <label for="trailName"
+               class="font-weight-bold text-secondary">
+            Name
+        </label>
+        <InputText @bind-Value="_trail.Name" class="form-control"
+                   id="trailName"/>
+
+    </FormFieldSet>
+
+    <FormFieldSet>
+        <label for="trailDescription"
+               class="font-weight-bold text-secondary">
+            Description
+        </label>
+        <InputTextArea @bind-Value="_trail.Description" class="form-control"
+                       id="trailDescription"/>
+
+    </FormFieldSet>
+
+    <FormFieldSet Width="col-6">
+        <label for="trailLocation"
+               class="font-weight-bold text-secondary">
+            Location
+        </label>
+        <InputText @bind-Value="_trail.Location" class="form-control"
+                   id="trailLocation"/>
+
+    </FormFieldSet>
+
+</FormSection>
+
+<FormSection Title="Difficulty"
+             HelpText="HelpContextType other hikers out by telling them the length
+of the trail is how long it might take them.">
+    <FormFieldSet Width="col-3">
+        <label for="trailLength"
+               class="font-weight-bold text-secondary">
+            Length (Km)
+        </label>
+        <InputNumber @bind-Value="_trail.Length" class="form-control"
+                     id="Length"/>
+    </FormFieldSet>
+</FormSection>
+
+<FormSection Title="Route Instructions"
+             HelpText="Router instructions are a guide for the trail. This helps hikers
+new to the trail stay on the track.">
+    @{ var i = 0; }
+    @foreach (var routeInstruction in _trail.Route)
+    {
+        i++;
+        routeInstruction.Stage = i;
+
+        <div class="row">
+            <div class="col-2">
+                <div class="form-group">
+                    <label class="font-weight-bold text-secondary">Stage</label>
+                    <p>@routeInstruction.Stage</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label
+                        for="routeInstructionDescription"
+                        class="font-weight-bold text-secondary">
+                        Description
+                    </label>
+                    <InputText
+                        @bind-Value="routeInstruction.Description"
+                        class="form-control"
+                        id="routeInstructionDescription"/>
+              
+                </div>
+            </div>
+
+            <div class="col-1 d-flex mt-3">
+                <button
+                    @onclick="@(() => _trail.Route.Remove(routeInstruction))"
+                    class="btn btn-link"
+                    type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser-fill" viewBox="0 0 16 16">
+                    <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
+                  </svg>
+                </button>
+            </div>
+        </div>
+    }
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-outline-primary m-2"
+                    type="button"
+                    @onclick="@(() => _trail.Route.Add(new TrailDto.RouteInstruction()))">
+                Add Instruction
+            </button>
+        </div>
+    </div>
+
+</FormSection>
+
+@code {
+    private TrailDto _trail = new();
+
+}

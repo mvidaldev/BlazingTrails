@@ -7,12 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazingTrails.Api\BlazingTrails.Api.csproj" />
-    <ProjectReference Include="..\BlazingTrails.Client\BlazingTrails.Client.csproj" />
   </ItemGroup>
+ 
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.SignalR.Core" Version="2.4.3" />
-  </ItemGroup>
-
-</Project>
+  </Project>

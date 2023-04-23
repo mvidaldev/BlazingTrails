@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<BlazingTrailsContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("BlazingTrailsContext")));
 builder.Services.AddControllers();
+
 builder.Services.AddEndpointsApiExplorer();
     
 

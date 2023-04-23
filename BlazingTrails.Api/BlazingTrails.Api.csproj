@@ -24,10 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazingTrails.Client\BlazingTrails.Client.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Remove="Persistence\Data, Entities\**" />
     <Compile Remove="BlazingTrails\**" />
     <Compile Remove="BlazingTrails.Api\**" />
@@ -49,6 +45,11 @@
     <None Remove="Persistence\Data, Entities\**" />
     <None Remove="BlazingTrails\**" />
     <None Remove="BlazingTrails.Api\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazingTrails.Client\BlazingTrails.Client.csproj" />
+    <ProjectReference Include="..\BlazingTrails.Shared\BlazingTrails.Shared.csproj" />
   </ItemGroup>
 
 </Project>
