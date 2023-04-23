@@ -20,6 +20,7 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Persistence\Data\" />
+    <Folder Include="Persistence\Data\Migrations\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,18 +29,26 @@
 
   <ItemGroup>
     <Compile Remove="Persistence\Data, Entities\**" />
+    <Compile Remove="BlazingTrails\**" />
+    <Compile Remove="BlazingTrails.Api\**" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Remove="Persistence\Data, Entities\**" />
+    <EmbeddedResource Remove="BlazingTrails\**" />
+    <EmbeddedResource Remove="BlazingTrails.Api\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="Persistence\Data, Entities\**" />
+    <Content Remove="BlazingTrails\**" />
+    <Content Remove="BlazingTrails.Api\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Persistence\Data, Entities\**" />
+    <None Remove="BlazingTrails\**" />
+    <None Remove="BlazingTrails.Api\**" />
   </ItemGroup>
 
 </Project>

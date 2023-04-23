@@ -1,5 +1,8 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BlazingTrails.Api.Persistence.Entities;
 
@@ -16,5 +19,18 @@ public class Trail
 
     public ICollection<RouteInstruction> Route { get; set; } = default!;
 
+
+}
+
+public class TrailConfig : IEntityTypeConfiguration<Trail>
+{
+    public void Configure(EntityTypeBuilder<Trail> builder)
+    {
+        builder.Property(t => t.Name).IsRequired();
+        builder.Property(t => t.Description).IsRequired();
+        builder.Property(t => t.Location).IsRequired();
+        builder.Property(t => t.TimeInMinutes).IsRequired();
+        builder.Property(t => t.Length).IsRequired();
+    }
 
 }
