@@ -1,0 +1,101 @@
+/* /Features/Home/Search/SearchFilter.razor.rz.scp.css */
+.filters[b-5glurppmc8] {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: baseline;
+  justify-content: flex-end;
+}
+.filters label[b-5glurppmc8] {
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+.filters input[b-5glurppmc8] {
+  margin-right: 20px;
+  width: 100px;
+}
+.filters button:first-of-type[b-5glurppmc8] {
+  margin-right: 10px;
+}
+
+/*# sourceMappingURL=SearchFilter.razor.css.map */
+/* /Features/Home/Search/TrailSearch.razor.rz.scp.css */
+.jumbotron[b-geo991fq8a] {
+  background: none;
+}
+.jumbotron input[b-geo991fq8a] {
+  border: 2px solid var(--brand);
+}
+
+/*# sourceMappingURL=TrailSearch.razor.css.map */
+/* /Features/Home/TrailCard/TrailDetails.razor.rz.scp.css */
+.drawer-mask[b-wu5gaut4gv] {
+  visibility: hidden;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: #000000;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawer-wrapper.slide .drawer-mask[b-wu5gaut4gv] {
+  opacity: 0.5;
+  visibility: visible;
+}
+.drawer-wrapper.slide .drawer[b-wu5gaut4gv] {
+  transform: translateX(0);
+}
+
+.drawer[b-wu5gaut4gv] {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 35em;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: white;
+  border-left: 0.063em solid gray;
+  z-index: 100;
+  transform: translateX(-110%);
+  transition: transform 0.3s ease, width 0.3s ease;
+  text-align: justify;
+}
+
+.drawer-wrapper.slide > .drawer[b-wu5gaut4gv] {
+  transform: translateX(0);
+}
+
+.drawer-content[b-wu5gaut4gv] {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.trail-details[b-wu5gaut4gv] {
+  padding: 20px;
+}
+
+.drawer-controls[b-wu5gaut4gv] {
+  padding: 50px;
+  background-color: #ffffff;
+}
+
+/*# sourceMappingURL=TrailDetails.razor.css.map */
+/* /Features/Layout/Header/Header.razor.rz.scp.css */
+.navbar img[b-8urkhx146u]{
+  display: flex;
+}
+/* /Features/ManageTrails/FormSection.razor.rz.scp.css */
+.card-brand[b-bdyxdkm47e] {
+  border-top: 4px solid var(--brand);
+}
+
+/*# sourceMappingURL=FormSection.razor.css.map */
