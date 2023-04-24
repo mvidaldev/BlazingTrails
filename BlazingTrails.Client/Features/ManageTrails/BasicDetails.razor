@@ -9,6 +9,8 @@
         <InputText @bind-Value="_trail.Name" class="form-control"
                    id="trailName"/>
 
+        <ValidationMessage For="() => _trail.Name"/>
+        
     </FormFieldSet>
 
     <FormFieldSet>
@@ -19,6 +21,8 @@
         <InputTextArea @bind-Value="_trail.Description" class="form-control"
                        id="trailDescription"/>
 
+        <ValidationMessage For="() => _trail.Description"/>
+        
     </FormFieldSet>
 
     <FormFieldSet Width="col-6">
@@ -29,6 +33,8 @@
         <InputText @bind-Value="_trail.Location" class="form-control"
                    id="trailLocation"/>
 
+        <ValidationMessage For="() => _trail.Location"/>
+        
     </FormFieldSet>
 
 </FormSection>
@@ -43,6 +49,8 @@ of the trail is how long it might take them.">
         </label>
         <InputNumber @bind-Value="_trail.Length" class="form-control"
                      id="Length"/>
+        
+        
     </FormFieldSet>
 </FormSection>
 
