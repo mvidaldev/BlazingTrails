@@ -7,7 +7,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "BlazingTrails.Client.dll": "sha256-Qafn5a4mUfzLoz4B08HS5pgd1I7+tf96RcNi7uB1xH8=",
+      "BlazingTrails.Client.dll": "sha256-bh9FmAffMQcAB5R0DWnJVwCHKHLMiMMkg6qRcCR76g8=",
       "BlazingTrails.Shared.dll": "sha256-m+MTtZzbyR3ym3wTumIZlT6U4ZMKVLXhBZVBcewoxCE=",
       "Blazored.FluentValidation.dll": "sha256-9z1MEAnn5QmnUOzfPgRD+ks29vTDb9DYqY+I3v1zfoM=",
       "FluentValidation.dll": "sha256-ZCPXoO3vCpk7Wjw2xaWYCY5diXd\/95jkzSMAmrLldkw=",
