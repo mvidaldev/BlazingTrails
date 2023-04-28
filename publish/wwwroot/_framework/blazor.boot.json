@@ -7,8 +7,8 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "BlazingTrails.Client.dll": "sha256-bh9FmAffMQcAB5R0DWnJVwCHKHLMiMMkg6qRcCR76g8=",
-      "BlazingTrails.Shared.dll": "sha256-m+MTtZzbyR3ym3wTumIZlT6U4ZMKVLXhBZVBcewoxCE=",
+      "BlazingTrails.Client.dll": "sha256-ThC+Tq6JATVtIsXB\/ZdEAF01LlUYbEVsyKgRaMKQRO4=",
+      "BlazingTrails.Shared.dll": "sha256-0jip9+f5wjbQkHmGs9UK6zBDIvZezgZBT27Yj99AhvE=",
       "Blazored.FluentValidation.dll": "sha256-9z1MEAnn5QmnUOzfPgRD+ks29vTDb9DYqY+I3v1zfoM=",
       "FluentValidation.dll": "sha256-ZCPXoO3vCpk7Wjw2xaWYCY5diXd\/95jkzSMAmrLldkw=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-QP+9ib2tHpYrkwMTIkh60aO49DKTGwJBAA5RaITVGDE=",
@@ -208,7 +208,7 @@
     "libraryInitializers": null,
     "pdb": null,
     "runtime": {
-      "dotnet.7.0.5.cjhovf9gfs.js": "sha256-codB25EodaFEP43MDCfMBuKXU4LqurUKnQrpoMIFnPs=",
+      "dotnet.7.0.5.u9ktey7fdn.js": "sha256-codB25EodaFEP43MDCfMBuKXU4LqurUKnQrpoMIFnPs=",
       "dotnet.timezones.blat": "sha256-rIVQOJ+gHn4DeRSq6Ac3CURS8YBJG3P4CtYPfIuZ\/kk=",
       "dotnet.wasm": "sha256-6u4NhRISPvoDQ8pKvno9KKJh2aKqzTavj4dpcdFCV\/o=",
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
