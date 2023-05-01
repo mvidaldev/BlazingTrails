@@ -13,6 +13,11 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.4" PrivateAssets="all" />
   </ItemGroup>
 
+	<ItemGroup>
+        <PackageReference Include="MediatR" Version="9.0.0"/>
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0"/>
+	</ItemGroup>
+
   <ItemGroup>
     <Watch Include="**/*.scss" />
     <None Update="**/*.css" Watch="false" />

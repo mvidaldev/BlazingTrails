@@ -51,7 +51,9 @@ of the trail is how long it might take them.">
         <InputNumber @bind-Value="_trail.Length" class="form-control"
                      id="Length"/>
         
-         <ValidationMessage For="@(() => _trail.Length)"/>
+        <ValidationMessage For="@(() => _trail.Length)"/>
+        
+        
     </FormFieldSet>
 </FormSection>
 
@@ -82,7 +84,8 @@ new to the trail stay on the track.">
                         @bind-Value="routeInstruction.Description"
                         class="form-control"
                         id="routeInstructionDescription"/>
-              
+
+                    <ValidationMessage For="@(() => routeInstruction.Description)"/>
                 </div>
             </div>
 
@@ -105,6 +108,8 @@ new to the trail stay on the track.">
                     @onclick="@(() => _trail.Route.Add(new TrailDto.RouteInstruction()))">
                 Add Instruction
             </button>
+
+            <ValidationMessage For="@(() => _trail.Route)"/>
         </div>
     </div>
 
